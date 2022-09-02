@@ -15,6 +15,6 @@ public class PizzaController {
             new Pizza(3, "Calzone", BigDecimal.valueOf(4), false)};
     @GetMapping("/pizzas")
     public ModelAndView findAll() {
-        return new ModelAndView("pizzas", "allePizzas", allePizzas);
+        return new ModelAndView("pizzas", "pizzas", allePizzas);
     }
 }

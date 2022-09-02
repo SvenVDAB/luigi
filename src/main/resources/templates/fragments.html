@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <nav th:fragment="menu">
+        <ul>
+            <li><a th:href="@{/}">Welkom</a></li>
+            <li><a th:href="@{/pizzas}">Pizza's</a></li>
+        </ul>
+    </nav>
+    <head th:fragment="head(title)">
+        <link rel="icon" th:href="@{/images/luigi.ico}" type="image/x-icon">
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/luigi.css}">
+    </head>
+    <table th:fragment="pizzaTabel(pizzas)">
+        <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Prijs</th>
+            <th>Pikant</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pizza : ${pizzas}" th:object="${pizza}">
+            <td th:text="*{naam}"></td>
+            <td th:text="*{prijs}" class="getal"></td>
+            <td><span th:if="*{pikant}">pikant</span></td>
+        </tr>
+        </tbody>
+    </table>
+</html>
