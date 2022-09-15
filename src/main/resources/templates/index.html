@@ -7,14 +7,6 @@
 <img th:src="@{/images/luigi.jpg}" alt="pizza" class="fullwidth">
 <h2>Goede <span th:text="${moment}"></span></h2>
 <h2>De zaakvoerder</h2>
-<!--<dl>
-    <dt>Naam</dt>
-    <dd th:text="${zaakvoerder.naam}"></dd>
-    <dt>Aantal kinderen</dt>
-    <dd th:text="${zaakvoerder.aantalKinderen}"></dd>
-    <dt>Gehuwd</dt>
-    <dd th:text="${zaakvoerder.gehuwd} ? 'Ja' : 'Nee'"></dd>
-</dl>-->
 <dl th:object="${zaakvoerder}">
     <dt>Naam</dt>
     <dd th:text="*{naam}"></dd>
