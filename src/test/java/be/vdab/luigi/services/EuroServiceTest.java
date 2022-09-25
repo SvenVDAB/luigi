@@ -1,6 +1,6 @@
 package be.vdab.luigi.services;
 
-import be.vdab.luigi.restclients.FixerKoersClient;
+import be.vdab.luigi.restclients.KoersClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,12 +17,12 @@ import static org.mockito.Mockito.when;
 class EuroServiceTest {
     private EuroService euroService;
     @Mock
-    private FixerKoersClient koersClient;
+    private KoersClient koersClient;
     @BeforeEach
     void beforeEach() {
 /*        System.out.println(koersClient.getClass());
         System.out.println(koersClient.getDollarKoers());*/
-        euroService = new EuroService(koersClient);
+        euroService = new EuroService(new KoersClient[] {koersClient});
     }
     @Test
     void naarDollar() {
