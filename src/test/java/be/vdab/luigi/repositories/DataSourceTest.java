@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @JdbcTest
-public class DataSourceTest {
+class DataSourceTest {
     private final DataSource dataSource;
     DataSourceTest(DataSource dataSource) {
         this.dataSource = dataSource;
