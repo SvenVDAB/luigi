@@ -26,7 +26,7 @@ public class PizzaRepository {
                 .usingGeneratedKeyColumns("id");
     }
 
-    public long FindAantal() {
+    public long findAantal() {
         var sql = """ 
                 select count(*)
                 from pizzas
