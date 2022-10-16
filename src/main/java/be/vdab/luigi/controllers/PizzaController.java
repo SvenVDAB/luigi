@@ -78,17 +78,17 @@ public class PizzaController {
                 pizzaService.findUniekePrijzen());
     }
 
-/*    private Stream<Pizza> findByPrijsHelper(BigDecimal prijs) {
-        return Arrays.stream(allePizzas)
-                .filter(pizza -> pizza.getPrijs().compareTo(prijs) == 0);
-    }*/
-
     @GetMapping("prijzen/{prijs}")
     public ModelAndView findByPrijs(@PathVariable BigDecimal prijs) {
-/*        return new ModelAndView("pizzasperprijs", "pizzas", findByPrijsHelper(prijs).iterator())
-                .addObject("prijzen", findPrijzenHelper().iterator());*/
         return new ModelAndView("pizzasperprijs", "pizzas",
                 pizzaService.findByPrijs(prijs))
                 .addObject("prijzen", pizzaService.findUniekePrijzen());
+    }
+
+    @GetMapping("aantalpizzasperprijs")
+    public ModelAndView findAantalPizzasPerPrijs() {
+        return new ModelAndView("aantalpizzasperprijs"
+                , "aantalPizzasPerPrijs",
+                pizzaService.findAantalPizzasPerPrijs());
     }
 }
