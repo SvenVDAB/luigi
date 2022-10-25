@@ -136,7 +136,6 @@ public class PizzaRepositoryTest extends AbstractTransactionalJUnit4SpringContex
                 .queryForObject("select count(distinct prijs) from pizzas", Integer.class));
         var rij1 = aantalPizzasPerPrijs.get(0);
         assertThat(rij1.aantal())
-                .isEqualTo(super
-                        .countRowsInTableWhere(PIZZAS, "prijs =" + rij1.prijs()));
+                .isEqualTo(super.countRowsInTableWhere(PIZZAS, "prijs =" + rij1.prijs()));
     }
 }
