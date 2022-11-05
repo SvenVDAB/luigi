@@ -1,5 +1,8 @@
 package be.vdab.luigi.domain;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 import java.math.BigDecimal;
 
 public class Pizza {
@@ -24,7 +27,7 @@ public class Pizza {
         return pikant;
     }
 
-    public Pizza(long id, String naam, BigDecimal prijs, boolean pikant) {
+    public Pizza(long id, @NotBlank String naam, @NotNull @PositiveOrZero BigDecimal prijs, boolean pikant) {
         this.id = id;
         this.naam = naam;
         this.prijs = prijs;
