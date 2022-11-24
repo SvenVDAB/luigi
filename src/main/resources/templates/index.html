@@ -17,7 +17,10 @@
     <dt>Adres</dt>
     <dd th:object="${zaakvoerder.adres}"
         th:text="|*{straat} *{huisNr} *{postcode} *{gemeente}|"></dd>
+    <dt>Geboorte</dt>
+    <dd th:text="*{{geboorte}}"></dd>
 </dl>
 <div>Aantal bezoeken: <th:block th:text="${aantalBezoeken}"></th:block>.</div>
+<div th:text="${identificatie.emailAdres}"></div>
 </body>
 </html>
