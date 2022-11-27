@@ -127,6 +127,6 @@ public class PizzaController {
             return "toevoegen";
         }
         redirect.addAttribute("idNieuwePizza", pizzaService.create(pizza));
-        return "redirect:/pizzas";
+        return "redirect:/toevoegen";
     }
 }
