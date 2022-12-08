@@ -50,17 +50,7 @@ public class PizzaController {
     @GetMapping("{id}")
     public ModelAndView findById(@PathVariable long id) {
         var modelAndView = new ModelAndView("pizza");
-/*        findByIdHelper(id)
-                .ifPresent(gevondenPizza -> {
-                    modelAndView.addObject("pizza", gevondenPizza);
-                    try {
-                        modelAndView.addObject(
-                                "inDollar", euroService.naarDollar(gevondenPizza.getPrijs())
-                        );
-                    } catch (KoersClientException ex) {
-                        logger.error("Kan dollar koers niet lezen", ex);
-                    }
-                });*/
+
         pizzaService.findById(id).ifPresent(pizza -> { // service oproepen
             modelAndView.addObject("pizza", pizza);
             try {
